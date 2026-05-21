@@ -1,13 +1,13 @@
 :root {
-    --primary-color: #6366f1;
-    --primary-hover: #4f46e5;
-    --secondary-color: #a855f7;
-    --accent-color: #ec4899;
+    --primary-color: #2563eb;
+    --primary-hover: #1d4ed8;
+    --secondary-color: #64748b;
+    --accent-color: #0ea5e9;
     --bg-color: #f8fafc;
     --card-bg: #ffffff;
-    --text-main: #1e293b;
+    --text-main: #0f172a;
     --text-muted: #64748b;
-    --nav-bg: #4f46e5;
+    --nav-bg: #1e293b;
 }
 
 body {
@@ -18,29 +18,29 @@ body {
 
 .navbar {
     background-color: var(--nav-bg) !important;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
 }
 
 .navbar-brand, .nav-link {
-    color: white !important;
+    color: #f1f5f9 !important;
     font-weight: 500;
 }
 
 .nav-link:hover {
-    color: #e2e8f0 !important;
+    color: white !important;
 }
 
 .card.post-card {
-    border: none;
-    border-radius: 12px;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-    margin-bottom: 20px;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    box-shadow: none;
+    margin-bottom: 16px;
     background-color: var(--card-bg);
-    transition: transform 0.2s;
+    transition: border-color 0.2s;
 }
 
 .card.post-card:hover {
-    transform: translateY(-2px);
+    border-color: #cbd5e1;
 }
 
 .post-author {
@@ -55,7 +55,9 @@ body {
 }
 
 .post-body {
-    margin-top: 10px;
+    margin-top: 8px;
+    font-size: 1rem;
+    line-height: 1.5;
 }
 
 .btn-primary {
@@ -69,11 +71,17 @@ body {
 }
 
 .badge.text-bg-danger {
-    background-color: var(--accent-color) !important;
+    background-color: #ef4444 !important;
 }
 
 .alert-info {
-    background-color: #e0e7ff;
-    border-color: #c7d2fe;
-    color: #4338ca;
+    background-color: #f0f9ff;
+    border-color: #bae6fd;
+    color: #0369a1;
+}
+
+.alert-success {
+    background-color: #f0fdf4;
+    border-color: #bbf7d0;
+    color: #15803d;
 }
