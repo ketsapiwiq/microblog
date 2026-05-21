@@ -1,30 +1,39 @@
-    <table class="table table-hover">
-        <tr>
-            <td width="70px">
+<div class="card post-card">
+    <div class="card-body">
+        <div class="d-flex">
+            <div class="flex-shrink-0">
                 <a href="{{ url_for('main.user', username=post.author.username) }}">
-                    <img src="{{ post.author.avatar(70) }}" />
+                    <img src="{{ post.author.avatar(60) }}" class="rounded-circle shadow-sm" />
                 </a>
-            </td>
-            <td>
+            </div>
+            <div class="flex-grow-1 ms-3">
                 {% set user_link %}
-                    <a class="user_popup" href="{{ url_for('main.user', username=post.author.username) }}">
+                    <a class="user_popup post-author" href="{{ url_for('main.user', username=post.author.username) }}">
                         {{ post.author.username }}
                     </a>
                 {% endset %}
-                {{ _('%(username)s said %(when)s',
-                    username=user_link, when=moment(post.timestamp).fromNow()) }}
-                <br>
-                <span id="post{{ post.id }}">{{ post.body }}</span>
+                {% set post_when %}
+                    <span class="post-timestamp">{{ moment(post.timestamp).fromNow() }}</span>
+                {% endset %}
+                <div class="post-header">
+                    {{ _('%(username)s said %(when)s',
+                        username=user_link, when=post_when)|safe }}
+                </div>
+                <div class="post-body mt-2">
+                    <span id="post{{ post.id }}">{{ post.body }}</span>
+                </div>
                 {% if post.language and post.language != g.locale %}
-                <br><br>
-                <span id="translation{{ post.id }}">
-                    <a href="javascript:translate(
-                                'post{{ post.id }}',
-                                'translation{{ post.id }}',
-                                '{{ post.language }}',
-                                '{{ g.locale }}');">{{ _('Translate') }}</a>
-                </span>
+                <div class="mt-2 small">
+                    <span id="translation{{ post.id }}">
+                        <a href="javascript:translate(
+                                    'post{{ post.id }}',
+                                    'translation{{ post.id }}',
+                                    '{{ post.language }}',
+                                    '{{ g.locale }}');" class="text-decoration-none">{{ _('Translate') }}</a>
+                    </span>
+                </div>
                 {% endif %}
-            </td>
-        </tr>
-    </table>
+            </div>
+        </div>
+    </div>
+</div>
