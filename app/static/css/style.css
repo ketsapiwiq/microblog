@@ -1,0 +1,79 @@
+:root {
+    --primary-color: #6366f1;
+    --primary-hover: #4f46e5;
+    --secondary-color: #a855f7;
+    --accent-color: #ec4899;
+    --bg-color: #f8fafc;
+    --card-bg: #ffffff;
+    --text-main: #1e293b;
+    --text-muted: #64748b;
+    --nav-bg: #4f46e5;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+.navbar {
+    background-color: var(--nav-bg) !important;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.navbar-brand, .nav-link {
+    color: white !important;
+    font-weight: 500;
+}
+
+.nav-link:hover {
+    color: #e2e8f0 !important;
+}
+
+.card.post-card {
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    margin-bottom: 20px;
+    background-color: var(--card-bg);
+    transition: transform 0.2s;
+}
+
+.card.post-card:hover {
+    transform: translateY(-2px);
+}
+
+.post-author {
+    font-weight: 600;
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.post-timestamp {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+.post-body {
+    margin-top: 10px;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-hover);
+    border-color: var(--primary-hover);
+}
+
+.badge.text-bg-danger {
+    background-color: var(--accent-color) !important;
+}
+
+.alert-info {
+    background-color: #e0e7ff;
+    border-color: #c7d2fe;
+    color: #4338ca;
+}
